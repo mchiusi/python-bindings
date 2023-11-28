@@ -8,5 +8,11 @@ To be able to run the code, you must first install the requirements:
 $ python -m pip install -r requirements.txt
 ```
 This should be done inside a virtual environment.
+Once that is installed, you can use the invoke tool mentioned in the article to build and run the tests. See the `tasks.py` file or run `invoke --list` to get more details.
 
-Once that is installed, you can use the invoke tool mentioned in the article to build and run the tests. See the tasks.py file or run invoke --list to get more details.
+To run the code do the following:
+
+```
+invoke build-cffi # building the Python bindings
+python cffi_test.py
+```
