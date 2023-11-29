@@ -1,18 +1,12 @@
-# Real Python - Python Bindings Sample Code Repo
+# cppyy: Automatic Python-C++ bindings
 
-This is the repo to accompany the [Python Bindings](https://realpython.com/python-bindings-overview/) article.
+This is the repo to accompany the [Python Bindings cppyy](https://cppyy.readthedocs.io/en/latest/index.html#) documentation.
 
-To be able to run the code, you must first install the requirements:
+cppyy is an automatic, run-time, Python-C++ bindings generator, for calling C++ from Python and Python from C++. Run-time generation enables detailed specialization for higher performance, lazy loading for reduced memory use in large scale projects, Python-side cross-inheritance and callbacks for working with C++ frameworks, run-time template instantiation, automatic object downcasting, exception mapping, and interactive exploration of C++ libraries. 
 
-```console
-$ python -m pip install -r requirements.txt
+cppyy is based on Cling, the C++ interpreter, to match Python’s dynamism, interactivity, and run-time behavior. 
+
+To run the [tutorial](https://github.com/wlav/cppyy/blob/master/doc/tutorial/CppyyTutorial.ipynb) do the following:
 ```
-This should be done inside a virtual environment.
-Once that is installed, you can use the invoke tool mentioned in the article to build and run the tests. See the `tasks.py` file or run `invoke --list` to get more details.
-
-To run the code do the following:
-
-```
-invoke build-cffi # building the Python bindings
-python cffi_test.py
+python tutorial.py
 ```
