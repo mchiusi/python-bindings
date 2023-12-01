@@ -1,4 +1,4 @@
-#include "L1Trigger/L1THGCal/interface/backend_emulator/HGCalHistoClusteringConfig_SA.h"
+#include "HGCalHistoClusteringConfig_SA.h"
 #include <iostream>
 #include <fstream>
 
