@@ -58,6 +58,49 @@ ClusterAlgoConfig::ClusterAlgoConfig() :
   saturation_( (2<<19) - 1 )
 {}
 
+ClusterAlgoConfig::ClusterAlgoConfig(unsigned int cClocks, unsigned int cInputs, unsigned int cInputs2, unsigned int cInt, unsigned int cColumns, unsigned int cRows,
+                                     unsigned int rOverZHistOffset, unsigned int rOverZBinSize, const std::vector<unsigned int>& kernelWidths,
+                                     const std::vector<unsigned int>& areaNormalizations,
+                                     unsigned int thresholdMaximaParam_a, unsigned int thresholdMaximaParam_b, unsigned int thresholdMaximaParam_c,
+                                     const std::vector<int>& maximaWidths, const std::vector<int>& fanoutWidths,
+                                     const std::vector<unsigned int>& cosLUT, unsigned int clusterizerMagicTime,
+                                     const std::map<Step,unsigned int>& stepLatency,
+                                     const std::vector<unsigned int>& depths, const std::vector<unsigned int>& triggerLayers,
+                                     const std::vector<unsigned int>& layerWeights_E, const std::vector<unsigned int>& layerWeights_E_EM,
+                                     const std::vector<unsigned int>& layerWeights_E_EM_core,
+                                     const std::vector<unsigned int>& layerWeights_E_H_early, unsigned int correction, unsigned int saturation) :
+  TriggerCellDistributionLUT_( OpenMif("S2.CombinedTD.Balanced60.MixedTypes.NoSplit.mif") ),
+  TriggerCellAddressLUT_( OpenMif("S2.TCaddr.CombinedTD.Balanced60.MixedTypes.NoSplit.mif") ),  
+  cClocks_(cClocks),
+  cInputs_(cInputs),
+  cInputs2_(cInputs2),
+  cInt_(cInt),
+  cColumns_(cColumns),
+  cRows_(cRows),
+  rOverZHistOffset_(rOverZHistOffset),
+  rOverZBinSize_(rOverZBinSize),
+  kernelWidths_(kernelWidths),
+  areaNormalizations_(areaNormalizations),
+  thresholdMaximaParam_a_(thresholdMaximaParam_a),
+  thresholdMaximaParam_b_(thresholdMaximaParam_b),
+  thresholdMaximaParam_c_(thresholdMaximaParam_c),
+  thresholdMaximaConstants_(),
+  maximaWidths_(maximaWidths),
+  fanoutWidths_(fanoutWidths),
+  cosLUT_(cosLUT),
+  clusterizerMagicTime_(clusterizerMagicTime),
+  stepLatency_(stepLatency),
+  depths_(depths),
+  triggerLayers_(triggerLayers),
+  layerWeights_E_(layerWeights_E),
+  layerWeights_E_EM_(layerWeights_E_EM),
+  layerWeights_E_EM_core_(layerWeights_E_EM_core),
+  layerWeights_E_H_early_(layerWeights_E_H_early),
+  correction_(correction),
+  saturation_(saturation)
+{}
+
+
 void ClusterAlgoConfig::setStepLatencies( const std::vector<unsigned int> latencies ) {
   // Add check that stepLatency is at least same size as latencies
   // But not as cms.exception

@@ -40,6 +40,17 @@ namespace l1thgcfirmware {
   class ClusterAlgoConfig {
   public:
     ClusterAlgoConfig();
+    ClusterAlgoConfig(unsigned int cClocks, unsigned int cInputs, unsigned int cInputs2, unsigned int cInt, unsigned int cColumns, unsigned int cRows,
+                      unsigned int rOverZHistOffset, unsigned int rOverZBinSize, const std::vector<unsigned int>& kernelWidths,
+                      const std::vector<unsigned int>& areaNormalizations,
+                      unsigned int thresholdMaximaParam_a, unsigned int thresholdMaximaParam_b, unsigned int thresholdMaximaParam_c,
+                      const std::vector<int>& maximaWidths, const std::vector<int>& fanoutWidths,
+                      const std::vector<unsigned int>& cosLUT, unsigned int clusterizerMagicTime,
+                      const std::map<Step,unsigned int>& stepLatency,
+                      const std::vector<unsigned int>& depths, const std::vector<unsigned int>& triggerLayers,
+                      const std::vector<unsigned int>& layerWeights_E, const std::vector<unsigned int>& layerWeights_E_EM,
+                      const std::vector<unsigned int>& layerWeights_E_EM_core,
+                      const std::vector<unsigned int>& layerWeights_E_H_early, unsigned int correction, unsigned int saturation);
     ~ClusterAlgoConfig() {};
 
     void setParameters() {}
@@ -112,6 +123,7 @@ namespace l1thgcfirmware {
     unsigned int maximaWidths( unsigned int iBin ) const { return maximaWidths_.at(iBin); }
 
     unsigned int fanoutWidths( unsigned int iBin ) const { return fanoutWidths_.at(iBin); }
+
 
 
     unsigned int nBinsCosLUT() const { return cosLUT_.size(); }

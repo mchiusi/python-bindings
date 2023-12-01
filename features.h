@@ -21,8 +21,8 @@ void Abstract::concrete_method() {
 //----
 class Concrete { // : Abstract {
 public:
-    Concrete() {}
-    // Concrete(int n=42) : m_int(n), m_const_int(17) {}
+    // Concrete() {}
+    Concrete(int n=42) : m_int(n), m_const_int(17) {}
     ~Concrete() {}
 
     virtual void abstract_method() {
@@ -60,7 +60,7 @@ public:
 public:
     double m_data[4];
     int m_int;
-    // const int m_const_int;
+    const int m_const_int;
 
     static int s_int;
 };
