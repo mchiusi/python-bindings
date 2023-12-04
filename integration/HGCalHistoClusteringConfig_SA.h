@@ -15,7 +15,7 @@
 
 namespace l1thgcfirmware {
 
-  enum Step { Uninitialized = -1, 
+  enum Step { // Uninitialized = -1, 
               UnpackLinks = 0,              
               TriggerCellDistribution = 1,
               UnpackTriggerCells = 2,
@@ -46,7 +46,7 @@ namespace l1thgcfirmware {
                       unsigned int thresholdMaximaParam_a, unsigned int thresholdMaximaParam_b, int thresholdMaximaParam_c,
                       const std::vector<int>& maximaWidths, const std::vector<int>& fanoutWidths,
                       const std::vector<unsigned int>& cosLUT, unsigned int clusterizerMagicTime,
-                      // const std::map<Step,unsigned int>& stepLatency,
+                      const std::map<Step,unsigned int>& stepLatency,
                       const std::vector<unsigned int>& depths, const std::vector<unsigned int>& triggerLayers,
                       const std::vector<unsigned int>& layerWeights_E, const std::vector<unsigned int>& layerWeights_E_EM,
                       const std::vector<unsigned int>& layerWeights_E_EM_core,

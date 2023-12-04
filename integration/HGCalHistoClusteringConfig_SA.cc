@@ -64,7 +64,7 @@ ClusterAlgoConfig::ClusterAlgoConfig(unsigned int cClocks, unsigned int cInputs,
                                      unsigned int thresholdMaximaParam_a, unsigned int thresholdMaximaParam_b, int thresholdMaximaParam_c,
                                      const std::vector<int>& maximaWidths, const std::vector<int>& fanoutWidths,
                                      const std::vector<unsigned int>& cosLUT, unsigned int clusterizerMagicTime,
-                                     // const std::map<Step,unsigned int>& stepLatency,
+                                     const std::map<Step,unsigned int>& stepLatency,
                                      const std::vector<unsigned int>& depths, const std::vector<unsigned int>& triggerLayers,
                                      const std::vector<unsigned int>& layerWeights_E, const std::vector<unsigned int>& layerWeights_E_EM,
                                      const std::vector<unsigned int>& layerWeights_E_EM_core,
@@ -89,29 +89,29 @@ ClusterAlgoConfig::ClusterAlgoConfig(unsigned int cClocks, unsigned int cInputs,
   fanoutWidths_(fanoutWidths),
   cosLUT_(cosLUT),
   clusterizerMagicTime_(clusterizerMagicTime),
-  // stepLatency_(stepLatency),
-  stepLatency_({
-    { UnpackLinks , 3 },        
-    { TriggerCellDistribution , 2 },
-    { UnpackTriggerCells , 4 },
-    { TcToHc , 2 },
-    { Hist   , 231 },
-    { Smearing1D , 6 },
-    { Interleaving , 1 },
-    { NormArea   , 3 },
-    { Smearing2D , 5 },
-    { Deinterleaved , 4 },    
-    { Maxima1D   , 5 },
-    { Interleaving2 , 0 },  // Unused
-    { Maxima2D   , 6 },
-    { ThresholdMaxima , 3 },  // Unused?
-    { CalcAverage , 4 },
-    { Deinterleaving2, 0 }, // Unused
-    { MaximaFanout , 9 },
-    { Clusterizer , 0 },
-    { TriggerCellToCluster , 8 }
-    // { ClusterSum , 0 }
-  }),
+  stepLatency_(stepLatency),
+  // stepLatency_({
+  //   { UnpackLinks , 3 },        
+  //   { TriggerCellDistribution , 2 },
+  //   { UnpackTriggerCells , 4 },
+  //   { TcToHc , 2 },
+  //   { Hist   , 231 },
+  //   { Smearing1D , 6 },
+  //   { Interleaving , 1 },
+  //   { NormArea   , 3 },
+  //   { Smearing2D , 5 },
+  //   { Deinterleaved , 4 },    
+  //   { Maxima1D   , 5 },
+  //   { Interleaving2 , 0 },  // Unused
+  //   { Maxima2D   , 6 },
+  //   { ThresholdMaxima , 3 },  // Unused?
+  //   { CalcAverage , 4 },
+  //   { Deinterleaving2, 0 }, // Unused
+  //   { MaximaFanout , 9 },
+  //   { Clusterizer , 0 },
+  //   { TriggerCellToCluster , 8 }
+  //   // { ClusterSum , 0 }
+  // }),
   depths_(depths),
   triggerLayers_(triggerLayers),
   layerWeights_E_(layerWeights_E),
